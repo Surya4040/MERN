@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Conference 2024</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Tech Conference 2024</h1>
+        <nav>
+            <ul>
+                <li><a href="#speakers">Speakers</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#sponsors">Sponsors</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="speakers">
+            <h2>Keynote Speakers</h2>
+        
+            <article>
+                <h3>Dr. Jane Doe</h3>
+                <p>Topic: AI and the Future</p>
+            </article>
+        
+            <article>
+                <h3>Mr. John Smith</h3>
+                <p>Topic: Cybersecurity Trends in 2024</p>
+            </article>
+        </section>
+        
+        
+        
+
+        <section id="schedule">
+            <h2>Conference Schedule</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Event</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10:00 AM</td>
+                        <td>Opening Keynote by Dr. Jane Doe</td>
+                    </tr>
+                    <tr>
+                        <td>11:30 AM</td>
+                        <td>Cybersecurity Panel Discussion</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+
+        <section id="sponsors">
+            <h2>Our Sponsors</h2>
+            <ul>
+                <li><a href="https://www.acmecorp.com" target="_blank">Acme Corp</a></li>
+                <li><a href="https://www.google.com" target="_blank">Google</a></li>
+                <li><a href="https://www.ibm.com" target="_blank">IBM</a></li>
+            </ul>
+        </section>
+        
+
+        <aside>
+            <h2>Related Events</h2>
+            <ul>
+                <li>Networking Night - July 10</li>
+                <li>Startup Pitch Session - July 11</li>
+                <li>Hackathon Finale - July 12</li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tech Conference. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+
+
+
+// Smooth scroll for nav links
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1); // remove the '#'
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// Optional: Alert when sponsor links are clicked
+document.querySelectorAll('#sponsors a').forEach(link => {
+    link.addEventListener('click', function () {
+        alert(`You are about to visit: ${this.href}`);
+    });
+});
+
+// Optional: Create and handle a "Back to Top" button
+const backToTopBtn = document.createElement('button');
+backToTopBtn.innerText = '↑ Top';
+backToTopBtn.style.position = 'fixed';
+backToTopBtn.style.bottom = '20px';
+backToTopBtn.style.right = '20px';
+backToTopBtn.style.padding = '10px 15px';
+backToTopBtn.style.backgroundColor = '#004080';
+backToTopBtn.style.color = '#fff';
+backToTopBtn.style.border = 'none';
+backToTopBtn.style.borderRadius = '5px';
+backToTopBtn.style.cursor = 'pointer';
+backToTopBtn.style.display = 'none';
+document.body.appendChild(backToTopBtn);
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopBtn.style.display = 'block';
+    } else {
+        backToTopBtn.style.display = 'none';
+    }
+});
+
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+
+
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #004080;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+header h1 {
+    margin-bottom: 10px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Sections */
+main {
+    margin-top: 30px;
+}
+section {
+    margin-bottom: 40px;
+}
+section h2 {
+    color: #004080;
+    margin-bottom: 10px;
+}
+article {
+    background: #e6f0ff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 5px solid #004080;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+table th {
+    background-color: #004080;
+    color: white;
+}
+
+/* Sponsors */
+#sponsors ul {
+    list-style: none;
+    padding-left: 0;
+}
+#sponsors li {
+    margin-bottom: 5px;
+}
+#sponsors a {
+    color: #004080;
+    text-decoration: none;
+}
+#sponsors a:hover {
+    text-decoration: underline;
+}
+
+/* Aside */
+aside {
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-left: 5px solid #999;
+}
+aside h2 {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #004080;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
