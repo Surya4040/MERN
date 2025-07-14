@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+<textarea name="" id="inputText" cols="30" rows="10"></textarea>  
+
+<input type="text" id="pattern">
+
+<input type="text" id="replacementValue">
+
+<button type="button" onclick="pat()">Replace Pattern</button>
+<div id="modifiedText"></div>
+
+
+<script>
+  function pat(){
+    const input=document.getElementById('inputText').value;
+    const pattern=document.getElementById('pattern').value;
+    const replace=document.getElementById('replacementValue').value;
+    const modify=document.getElementById('modifiedText')
+if(input ==='' ||pattern===''||replace===''){
+  modify.innerText='All fields are required.'
+  return
+}
+
+const reg=RegExp(pattern,'gi');
+const updated=input.replace(reg,replace)
+modify.innerText=updated
+
+
+  }
+</script>
+</body>
+</html>
