@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+</head>
+<body>
+  <form onsubmit="val(event)">
+    <label for="">email</label>
+    <input type="text" id="email">
+    <button type="submit">submit</button>
+    <h1 id="message"></h1>
+  </form>
+
+  <script>
+    function val(e){
+      e.preventDefault();
+      let val=document.getElementById('email').value
+    let message=document.getElementById('message')
+
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(regex.test(val)){
+      message.textContent='Valid Email Address'
+      message.style.color='#2E873e'
+    }else{
+      message.textContent='Invalid Email Address'
+      message.style.color='#FF0000'
+    }
+    }
+    
+  </script>
+
+</body>
+</html>
