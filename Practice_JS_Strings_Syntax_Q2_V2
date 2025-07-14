@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+</head>
+<body>
+  <textarea name="" id="sentences" cols="30" rows="10"></textarea>
+  <input type="text" id="pattern">
+  <button type="button" onclick="find()">Find Pattern</button>
+  <h2 id="result">Please enter a pattern to search for.</h2>
+
+  <script>
+    function find(){
+      const text=document.getElementById('sentences').value;
+    const pattern = document.getElementById("pattern").value;
+      const result = document.getElementById("result");
+
+      if (pattern === "") {
+        result.textContent = "Please enter a pattern to search for.";
+        return;
+      }
+
+      let rege=RegExp(pattern,'gi')
+      let match=text.match(rege)
+      let count=match ? match.length : 0
+
+      result.textContent=`Pattern found ${count} time ${count == 1 ? '':'s'}` 
+    }
+ 
+
+  </script>
+</body>
+</html>
